@@ -1,0 +1,21 @@
+.addButton{
+    width: 100%;
+}
+.wrapper{
+    padding: 5px;
+
+    span{
+        margin-bottom: 5px;
+    }
+    .input{
+        margin-top:10px;
+        display: flex;
+        flex-direction: column;
+        input{
+            padding:5px;
+        }
+    }
+}
+
+textarea{
+}

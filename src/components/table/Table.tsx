@@ -7,10 +7,11 @@ const Table = ({ users }: { users: user[] }) => {
     <table id="customers">
       <tbody>
         <tr>
-          <th>Id</th>
           <th>User</th>
+          <th>Id</th>
           <th>Title</th>
         </tr>
+
         {users.map((user) => (
           <tr key={user.id}>
             <td>{user.id}</td>

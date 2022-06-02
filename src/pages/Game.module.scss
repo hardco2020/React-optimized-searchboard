@@ -1,0 +1,93 @@
+$cell-width: 100px;
+$cell-height: 100px;
+$x-size: calc($cell-width* .9);
+
+.wrapper{
+    box-sizing: border-box;
+    .user{
+        padding:5px;
+        font-size:3em;
+    }
+    .board{
+        width:50vw;
+        height: 50vh;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: repeat(3,auto);
+
+        .cell{
+            width: $cell-width;
+            height: $cell-height;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+            position: relative;
+            cursor:pointer;
+            &:nth-child(3n+1){ //1,4,7
+                border-left: none;
+            }
+            &:nth-child(3n+3){ // 3,6,9
+                border-right: none;
+            }
+            &:nth-child(1),&:nth-child(2),&:nth-child(3){
+                border-top: none;
+            };
+            &:nth-child(7),&:nth-child(8),&:nth-child(9){
+                border-bottom: none;
+            }
+        }
+        .cell_cross{
+            cursor: not-allowed;
+            &::before,&::after{
+                content: '';
+                width: calc($x-size * .15);
+                height: $x-size  ;
+                background-color: black;
+            }
+            &::before{
+                transform: rotate(45deg);  
+            }
+            &::after{
+                transform: rotate(-45deg);
+                position: absolute;
+            }
+        }
+        .cell_circle{
+            cursor: not-allowed;
+            &::before,&::after{
+                content: '';
+                position: absolute;
+                border-radius: 50%;
+                background-color: black;
+            }
+            &::before{
+                width: $x-size;
+                height: $x-size;
+                transform: rotate(45deg);  
+            }
+            &::after{
+                width: calc($x-size * .7);
+                height: calc($x-size * .7);
+                transform: rotate(-45deg);
+                position: absolute;
+                background-color: white;
+            }
+        }
+    }
+    .win_message{
+        display: flex;
+        padding: 5px;   
+        align-items: center;
+        .text{
+            font-size:2em;
+            margin: 0px 20px;
+        }
+        .restart{
+            width:100px;
+            height:50px;
+            font-size:1em;
+        }
+    }
+}

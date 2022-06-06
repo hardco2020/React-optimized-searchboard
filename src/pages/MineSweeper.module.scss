@@ -1,0 +1,39 @@
+$cell-width: 50px;
+$cell-height: 50px;
+
+.wrapper{
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    width: 100vw;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    .board{
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        grid-template-columns: repeat(10,auto);
+        
+        .cell{
+            width: $cell-width;
+            height: $cell-height;
+            background-color: lightgray;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid 
+        }
+        .cell_reveal{
+            width: $cell-width;
+            height: $cell-height;
+            background-color: gray;
+            color:white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid black;
+        }
+    }
+}
